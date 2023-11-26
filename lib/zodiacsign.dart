@@ -174,7 +174,6 @@ class ZodiacSign {
   @override
   String toString() {
     return'''
-    const Text('Zodiac Sign: ', style: TextStyle(fontWeight: FontWeight.bold) );
       Zodiac Sign: $_zodiac \n\n
       Zodiac Element: $_zodiacElement \n\n
       Zodiac Personality: \n $_zodiacPersonality \n\n

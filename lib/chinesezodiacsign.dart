@@ -171,7 +171,7 @@ class ChineseZodiacSign {
     Zodiac Element: $_element \n\n
     Compatibility: $_compatibility \n\n
     Attributes: $_attribute \n\n
-    Description: $_element
+    Description: $_description
   ''';
   }
 
