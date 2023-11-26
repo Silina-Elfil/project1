@@ -1,0 +1,3 @@
+class Chinesezodiacsign {
+  const Chinesezodiacsign();
+}
