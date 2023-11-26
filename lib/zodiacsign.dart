@@ -166,4 +166,14 @@ class ZodiacSign {
     }
     return compatibility;
   }
+
+  @override
+  String toString() {
+    return '''
+      Zodiac Sign: \n $_zodiac
+      Zodiac Element: \n $_zodiacElement
+      Zodiac Personality: \n $_zodiacPersonality
+      Zodiac Compatibility: \n $_zodiacCompatibility
+    ''';
+  }
 }
