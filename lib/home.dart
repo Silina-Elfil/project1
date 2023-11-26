@@ -39,14 +39,12 @@ class _HomeState extends State<Home> {
 
   void openChineseZodiacSignPage() {
     try {
-      int day = int.parse(_controllerDay.text);
-      int month = int.parse(_controllerMonth.text);
       int year = int.parse(_controllerYear.text);
 
       Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => const ChineseZodiacSignPage(),
           settings:
-              RouteSettings(arguments: ChineseZodiacSign(day, month, year))));
+              RouteSettings(arguments: ChineseZodiacSign(year))));
     } catch (e) {
       print(e);
     }

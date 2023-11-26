@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'zodiacSign.dart';
 
 class ZodiacSignPage extends StatefulWidget {
   const ZodiacSignPage({Key? key}) : super(key: key);

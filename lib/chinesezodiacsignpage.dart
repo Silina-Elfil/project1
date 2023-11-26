@@ -10,6 +10,20 @@ class ChineseZodiacSignPage extends StatefulWidget {
 class _ChineseZodiacSignPageState extends State<ChineseZodiacSignPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    final chineseZodiacSign = ModalRoute.of(context)!.settings.arguments ;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Chinese Zodiac Sign'),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(children: [
+          const SizedBox(height: 16.0),
+          Text(chineseZodiacSign.toString(),
+              style: const TextStyle(fontSize: 24)),
+        ],),
+      ),
+    );
   }
 }
