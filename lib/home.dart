@@ -57,7 +57,14 @@ class _HomeState extends State<Home> {
         title: const Text('Check Your Zodiac Sign'),
         centerTitle: true,
       ),
-      body: Center(
+      body: Container(
+    decoration: const BoxDecoration(
+    image: DecorationImage(
+    image: AssetImage("assets/imgbg.jpg"),
+    fit: BoxFit.cover,
+    ),
+    ),
+      child: Center(
         child: Column(
           children: [
             const SizedBox(height: 16.0),
@@ -74,7 +81,11 @@ class _HomeState extends State<Home> {
               children: [
                 const Text(
                   '     Day',
-                  style: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic),
+                  style: TextStyle(
+                      fontSize: 20.0,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white
+                  ),
                 ),
                 const SizedBox(width: 16.0),
                 SizedBox(
@@ -98,7 +109,11 @@ class _HomeState extends State<Home> {
               children: [
                 const Text(
                   'Month',
-                  style: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic),
+                  style: TextStyle(
+                      fontSize: 20.0,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white
+                  ),
                 ),
                 const SizedBox(width: 16.0),
                 SizedBox(
@@ -122,7 +137,11 @@ class _HomeState extends State<Home> {
               children: [
                 const Text(
                   '    Year',
-                  style: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic),
+                  style: TextStyle(
+                      fontSize: 20.0,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white
+                  ),
                 ),
                 const SizedBox(width: 16.0),
                 SizedBox(
@@ -158,6 +177,6 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-    );
+    ));
   }
 }
