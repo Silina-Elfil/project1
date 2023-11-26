@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'zodiacsignpage.dart';
-import 'zodiacsign.dart';
-import 'chinesezodiacsignpage.dart';
+import 'zodiacSignPage.dart';
+import 'zodiacSign.dart';
+import 'chineseZodiacSignPage.dart';
+import 'chineseZodiacSign.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key});
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();
@@ -16,7 +17,6 @@ class _HomeState extends State<Home> {
   final TextEditingController _controllerYear = TextEditingController();
 
   @override
-
   void dispose() {
     _controllerDay.dispose();
     _controllerMonth.dispose();
@@ -28,16 +28,27 @@ class _HomeState extends State<Home> {
     try {
       int day = int.parse(_controllerDay.text);
       int month = int.parse(_controllerMonth.text);
-      //int year = int.parse(_controllerYear.text);
 
-      Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => const ZodiacSignPage(),
-              settings: RouteSettings(arguments: ZodiacSign(day, month))
-          )
-      );
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => const ZodiacSignPage(),
+          settings: RouteSettings(arguments: ZodiacSign(day, month))));
+    } catch (e) {
+      print(e);
     }
-    catch(e) {
-      print(e); // better to remove print in release version
+  }
+
+  void openChineseZodiacSignPage() {
+    try {
+      int day = int.parse(_controllerDay.text);
+      int month = int.parse(_controllerMonth.text);
+      int year = int.parse(_controllerYear.text);
+
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => const ChineseZodiacSignPage(),
+          settings:
+              RouteSettings(arguments: ChineseZodiacSign(day, month, year))));
+    } catch (e) {
+      print(e);
     }
   }
 
@@ -55,35 +66,95 @@ class _HomeState extends State<Home> {
             const Text(
               'Enter your date of birth',
               style: TextStyle(
-                fontSize: 30.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue
-              ),
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blue),
             ),
             const SizedBox(height: 16.0),
-            _buildTextFieldWithLabel('     Day'),
-            const SizedBox(height: 16.0),
-            _buildTextFieldWithLabel('Month'),
-            const SizedBox(height: 16.0),
-            _buildTextFieldWithLabel('    Year'),
-            const SizedBox(height: 30.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: openZodiacSignPage,
-                  child: const Text('Check Zodiac Sign',
-                      style: TextStyle(
-                          fontSize: 30.0,
-                          backgroundColor: Colors.indigo)
+                const Text(
+                  '     Day',
+                  style: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic),
+                ),
+                const SizedBox(width: 16.0),
+                SizedBox(
+                  height: 50.0,
+                  width: 200.0,
+                  child: TextField(
+                    controller: _controllerDay,
+                    style: const TextStyle(fontSize: 18.0),
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'day',
+                    ),
                   ),
                 ),
+              ],
+            ),
+            const SizedBox(height: 16.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Month',
+                  style: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic),
+                ),
+                const SizedBox(width: 16.0),
+                SizedBox(
+                  height: 50.0,
+                  width: 200.0,
+                  child: TextField(
+                    controller: _controllerMonth,
+                    style: const TextStyle(fontSize: 18.0),
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'month',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  '    Year',
+                  style: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic),
+                ),
+                const SizedBox(width: 16.0),
+                SizedBox(
+                  height: 50.0,
+                  width: 200.0,
+                  child: TextField(
+                    controller: _controllerYear,
+                    style: const TextStyle(fontSize: 18.0),
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'year',
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: openZodiacSignPage,
+                  child: const Text('Check Zodiac Sign'),
+                ),
                 const SizedBox(width: 50.0),
-                ElevatedButton(onPressed: (){
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => const ChineseZodiacSignPage())
-                  );
-                }, child: const Text('Check Chinese Zodiac Sign'),
-                )
+                ElevatedButton(
+                  onPressed: openChineseZodiacSignPage,
+                  child: const Text('Check Chinese Zodiac Sign'),
+                ),
               ],
             )
           ],
@@ -91,32 +162,4 @@ class _HomeState extends State<Home> {
       ),
     );
   }
-
-  Widget _buildTextFieldWithLabel(String labelText) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          labelText,
-          style: const TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic),
-        ),
-        const SizedBox(width: 16.0),
-        SizedBox(
-          height: 50.0,
-          width: 300.0,
-          child: TextField(
-            style: const TextStyle(fontSize: 18.0),
-            keyboardType: TextInputType.number,
-            decoration: InputDecoration(
-              border: const OutlineInputBorder(),
-              hintText: labelText.toLowerCase().trim(),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
 }
-
-
-

@@ -1,3 +1,7 @@
+import 'dart:html';
+
+import 'package:flutter/cupertino.dart';
+
 class ZodiacSign {
   int _day = 0;
   int _month = 0;
@@ -169,11 +173,11 @@ class ZodiacSign {
 
   @override
   String toString() {
-    return '''
-      Zodiac Sign: \n $_zodiac
-      Zodiac Element: \n $_zodiacElement
-      Zodiac Personality: \n $_zodiacPersonality
-      Zodiac Compatibility: \n $_zodiacCompatibility
+    return'''
+      Zodiac Sign: $_zodiac \n\n
+      Zodiac Element: $_zodiacElement \n\n
+      Zodiac Personality: \n $_zodiacPersonality \n\n
+      Zodiac Compatibility: \n $_zodiacCompatibility 
     ''';
   }
 }

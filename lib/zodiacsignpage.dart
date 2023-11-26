@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'zodiacsign.dart';
+import 'zodiacSign.dart';
 
 class ZodiacSignPage extends StatefulWidget {
   const ZodiacSignPage({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class ZodiacSignPage extends StatefulWidget {
 class _ZodiacSignPageState extends State<ZodiacSignPage> {
   @override
   Widget build(BuildContext context) {
-    final zodiacSign = ModalRoute.of(context)!.settings.arguments as ZodiacSign;
+    final zodiacSign = ModalRoute.of(context)!.settings.arguments ;
 
     return Scaffold(
       appBar: AppBar(
@@ -22,10 +22,7 @@ class _ZodiacSignPageState extends State<ZodiacSignPage> {
         child: Column(children: [
           const SizedBox(height: 16.0),
           Text(zodiacSign.toString(),
-              style: const TextStyle(
-                  color: Colors.blue,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold)),
+              style: const TextStyle(fontSize: 24)),
         ],),
       ),
     );
