@@ -10,7 +10,7 @@ class ChineseZodiacSignPage extends StatefulWidget {
 class _ChineseZodiacSignPageState extends State<ChineseZodiacSignPage> {
   @override
   Widget build(BuildContext context) {
-    final chineseZodiacSign = ModalRoute.of(context)!.settings.arguments ;
+    final chineseZodiacSign = ModalRoute.of(context)!.settings.arguments;
 
     return Scaffold(
       appBar: AppBar(

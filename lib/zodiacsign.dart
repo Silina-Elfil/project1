@@ -1,4 +1,4 @@
-import 'dart:html';
+
 
 import 'package:flutter/cupertino.dart';
 
@@ -120,53 +120,53 @@ class ZodiacSign {
   String getZodiacCompatibility(String zodiac){
     String compatibility = '';
     if (zodiac == 'Aries'){
-      compatibility = 'Fire signs: Leo and Sagittarius \n '
-          'Air signs: Gemini, Libra, and Aquarius \n'
-          'Cosmic polar pair: Libra';
+      compatibility = '\t Fire signs: Leo and Sagittarius \n '
+          '\t Air signs: Gemini, Libra, and Aquarius \n'
+          '\t Cosmic polar pair: Libra';
     } else if (zodiac == 'Taurus'){
-      compatibility = 'Earth signs: Virgo and Capricorn \n '
-          'Water sings: Cancer, Scorpio, and Pisces \n'
-          'Cosmic polar pair: Scorpio';
+      compatibility = '\t Earth signs: Virgo and Capricorn \n '
+          '\t Water sings: Cancer, Scorpio, and Pisces \n'
+          '\t Cosmic polar pair: Scorpio';
     } else if (zodiac == 'Gemini'){
-      compatibility = 'Air signs – Libra and Aquarius \n '
-          'Fire signs: Aries, Leo, and Sagittarius \n'
-          'Cosmic polar pair: Sagittarius';
+      compatibility = '\t Air signs – Libra and Aquarius \n '
+          '\t Fire signs: Aries, Leo, and Sagittarius \n'
+          '\t Cosmic polar pair: Sagittarius';
     } else if (zodiac == 'Cancer'){
-      compatibility = 'Water signs: Scorpio and Pisces \n'
-          'Earth signs: Taurus, Virgo, and Capricorn \n'
-          'Cosmic polar pair: Capricorn';
+      compatibility = '\t Water signs: Scorpio and Pisces \n'
+          '\t Earth signs: Taurus, Virgo, and Capricorn \n'
+          '\t Cosmic polar pair: Capricorn';
     }else if (zodiac == 'Leo'){
-      compatibility = 'Fire signs: Aries and Sagittarius \n'
-          'Air signs: Gemini, Libra, and Aquarius \n'
-          'Cosmic polar pair: Aquarius';
+      compatibility = '\t Fire signs: Aries and Sagittarius \n'
+          '\t Air signs: Gemini, Libra, and Aquarius \n'
+          '\t Cosmic polar pair: Aquarius';
     } else if (zodiac == 'Virgo'){
-      compatibility = 'Earth signs: Taurus and Capricorn \n'
-          'Water signs: Cancer, Scorpio, and Pisces \n'
-          'Cosmic polar pair: Pisces';
+      compatibility = '\t Earth signs: Taurus and Capricorn \n'
+          '\t Water signs: Cancer, Scorpio, and Pisces \n'
+          '\t Cosmic polar pair: Pisces';
     } else if (zodiac == 'Libra'){
-      compatibility = 'Air signs: Gemini and Aquarius \n'
-          'Fire signs: Aries, Leo, and Sagittarius \n'
-          'Cosmic polar pair: Aries.';
+      compatibility = '\t Air signs: Gemini and Aquarius \n'
+          '\t Fire signs: Aries, Leo, and Sagittarius \n'
+          '\t Cosmic polar pair: Aries.';
     } else if (zodiac == 'Scorpio'){
-      compatibility = 'Water signs: Cancer and Pisces \n'
-          'Earth signs: Taurus, Virgo, and Capricorn \n'
-          'Cosmic polar pair: Taurus';
+      compatibility = '\t Water signs: Cancer and Pisces \n'
+          '\t Earth signs: Taurus, Virgo, and Capricorn \n'
+          '\t Cosmic polar pair: Taurus';
     } else if (zodiac == 'Sagittarius'){
-      compatibility ='Fire signs: Aries and Leo \n'
-          'Air signs: Gemini, Libra and Aquarius \n'
-          'Cosmic polar pair: Gemini';
+      compatibility ='\t Fire signs: Aries and Leo \n'
+          '\t Air signs: Gemini, Libra and Aquarius \n'
+          '\t Cosmic polar pair: Gemini';
     } else if (zodiac == 'Capricorn'){
-      compatibility = 'Earth signs: Taurus and Virgo \n'
-          'Water signs: Cancer, Scorpio, and Pisces \n'
-          'Cosmic polar pair: Cancer';
+      compatibility = '\tEarth signs: Taurus and Virgo \n'
+          '\t Water signs: Cancer, Scorpio, and Pisces \n'
+          '\t Cosmic polar pair: Cancer';
     } else if (zodiac == 'Aquarius'){
-      compatibility = 'Air signs: Gemini and Libra \n'
-          'Fire signs: Aries, Leo, and Sagittarius \n'
-          'Cosmic polar pair: Leo';
+      compatibility = '\t Air signs: Gemini and Libra \n'
+          '\t Fire signs: Aries, Leo, and Sagittarius \n'
+          '\t Cosmic polar pair: Leo';
     } else {
-      compatibility = 'Water signs: Cancer and Scorpio \n'
-          'Earth signs: Taurus, Virgo, and Capricorn \n'
-          'Cosmic polar pair: Virgo';
+      compatibility = '\t Water signs: Cancer and Scorpio \n'
+          '\t Earth signs: Taurus, Virgo, and Capricorn \n'
+          '\t Cosmic polar pair: Virgo';
     }
     return compatibility;
   }
@@ -176,8 +176,8 @@ class ZodiacSign {
     return'''
       Zodiac Sign: $_zodiac \n\n
       Zodiac Element: $_zodiacElement \n\n
-      Zodiac Personality: \n $_zodiacPersonality \n\n
-      Zodiac Compatibility: \n $_zodiacCompatibility 
+      Zodiac Personality: \n$_zodiacPersonality \n\n
+      Zodiac Compatibility: \n$_zodiacCompatibility 
     ''';
   }
 }
